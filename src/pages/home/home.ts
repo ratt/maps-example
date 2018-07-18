@@ -1,7 +1,6 @@
 import {Component, ElementRef, ViewChild} from '@angular/core';
 import {NavController} from 'ionic-angular';
-import {Geolocation, Geoposition} from "@ionic-native/geolocation";
-import { Platform } from "ionic-angular";
+import {Platform} from "ionic-angular";
 
 @Component({
     selector: 'page-home',
