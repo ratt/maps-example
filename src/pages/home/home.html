@@ -1,9 +1,9 @@
 <ion-content>
   <div #map id="map" [style.width]="mapWidth" [style.height]="mapHeight"> </div>
-
-  <button ion-button outline (click)="drawRoute(1)">Step 1</button>
-  <button ion-button outline (click)="drawRoute(2)">Step 2</button>
-  <button ion-button outline (click)="drawRoute(3)">Step 3</button>
-  <button ion-button outline (click)="drawRoute(4)">Step 4</button>
-
+  <div>
+    <button ion-button outline class="route-btn" (click)="drawRoute(0)">Step 1</button>
+    <button ion-button outline class="route-btn" (click)="drawRoute(1)">Step 2</button>
+    <button ion-button outline class="route-btn" (click)="drawRoute(2)">Step 3</button>
+    <button ion-button outline class="route-btn" (click)="drawRoute(3)">Step 4</button>
+  </div>
 </ion-content>

@@ -126,32 +126,18 @@ export class HomePage {
      *
      */
     initMap(){
-        this.map = plugin.google.maps.Map.getMap(document.getElementById("map"), {
-            // mapType: plugin.google.maps.MapTypeId.ROADMAP,
-            backgroundColor: 'white',
-            controls: {
-                compass: false,
-                myLocationButton: false,
-                indoorPicker: true,
-                zoom: true
-            },
-            gestures: {
-                scroll: true,
-                tilt: true,
-                rotate: true,
-                zoom: true
-            },
-            camera: {
-                target: this.points[0],
-                tilt: 30,
-                zoom: 15,
-                bearing: 0
-            }
-        });
+        this.map = plugin.google.maps.Map.getMap(document.getElementById("map"));
 
         this.map.one(plugin.google.maps.event.MAP_READY, () => {
-            console.log('MAP_READY');
-            this.map.setMyLocationEnabled(true);
+            // console.log('MAP_READY');
+            this.map.moveCamera(
+                {
+                    target: {lat: -26.01611106, lng: 28.03467008},
+                    zoom: 14,
+                }
+            );
+
+            // this.map.setMyLocationEnabled(true);
             this.drawRoute(0);
         });
     }
@@ -161,9 +147,8 @@ export class HomePage {
      * Working Android Only
      */
     drawRoute(id){
-
+        // console.log('drawRoute');
         let points = this.routes[id];
-
         if(this.routePolyline){
             this.routePolyline.setPoints(points);
         }
