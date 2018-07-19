@@ -118,7 +118,9 @@ export class HomePage {
     }
 
     ionViewDidLoad(){
-        this.initMap();
+        setTimeout(()  => {
+            this.initMap();
+        }, 1000);
     }
 
     /**
